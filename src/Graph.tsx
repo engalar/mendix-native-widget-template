@@ -1,14 +1,35 @@
-import { createElement, useMemo } from "react";
-import { GraphContainerProps } from "../typings/GraphProps";
-import { ValueStatus } from 'mendix';
+import { createElement, ReactElement, useCallback } from "react";
+import { GraphProps } from "../typings/GraphProps";
+import { Pressable, Text, View } from "react-native";
+import { defaultGraphStyle, GraphStyle } from "./ui/Styles";
+import { flattenStyles } from "./piw-native-utils-internal";
+import { executeAction } from "./piw-utils-internal";
 
-export default function (props: GraphContainerProps) {
-    console.log(props);
-    const value = useMemo(() => {
-        if (props.attribute && props.attribute.status === ValueStatus.Available) {
-            return props.attribute.value;
-        }
-    }, [props.attribute])
+export default function (props: GraphProps<GraphStyle>): ReactElement {
+    const styles = flattenStyles(defaultGraphStyle, props.style);
 
-    return <div>hello {props.sampleText} and your value is {value}</div>;
+    const renderText = useCallback(() => {
+        return (
+            <Text testID={`${props.name}$caption`} style={styles.caption}>
+                demo
+            </Text>
+        );
+    }, [props.caption, styles]);
+
+    return (
+        <View style={styles.container} testID={props.name}>
+            {props.onClick ? (
+                <Pressable
+                    onPress={() => executeAction(props.onClick)}
+                    android_ripple={{
+                        color: styles.container.rippleColor
+                    }}
+                >
+                    {renderText()}
+                </Pressable>
+            ) : (
+                renderText()
+            )}
+        </View>
+    );
 }
