@@ -1,5 +1,7 @@
 # mendix 前端组件开发模板库
 
+重命名 [diff](https://github.com/engalar/mendix-native-widget-upload/compare/aec86ca62b5beba65e5cc20cee54bffde98a668c...98d0e4ba09399c7276b90179001f6b129bce27a5)
+
 # 创建脚手架
 
 ```cmd
