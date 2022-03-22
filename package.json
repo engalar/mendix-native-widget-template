@@ -1,7 +1,7 @@
 {
   "name": "graph",
   "widgetName": "Graph",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My widget description",
   "packagePath": "mendixcn",
   "author": "wengao.liu@siemens.com",
@@ -10,6 +10,8 @@
     "classnames": "^2.2.6"
   },
   "scripts": {
+    "emulator": " start %LocalAppData%/Android/Sdk/emulator/emulator.exe -netdelay none -netspeed full -studio-params tests/emu.tmp -avd Pixel_2_API_29",
+    "remoteDebugger": "start http://localhost:8083/debugger-ui/",
     "m": "npm install -g cnpm rollup prettier eslint --registry=https://registry.npmmirror.com",
     "x": "npm i --registry=https://registry.npmmirror.com",
     "testProject": "cmd /c git clone https://gitee.com/engalar/mendix-testproject-native-960.git --depth=1 ./tests/testProject && rd /s /q  .\\tests\\testProject\\.git",

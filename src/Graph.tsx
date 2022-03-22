@@ -5,7 +5,7 @@ import { defaultGraphStyle, GraphStyle } from "./ui/Styles";
 import { flattenStyles } from "./piw-native-utils-internal";
 import { executeAction } from "./piw-utils-internal";
 
-export default function (props: GraphProps<GraphStyle>): ReactElement {
+export function Graph(props: GraphProps<GraphStyle>): ReactElement {
     const styles = flattenStyles(defaultGraphStyle, props.style);
 
     const renderText = useCallback(() => {
