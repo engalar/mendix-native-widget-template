@@ -14,5 +14,6 @@ updateXml(`./src/${packageConfig.widgetName}.xml`, json => {
   json.widget.description[0] = packageConfig.description;
 })
 
-replaceFile(`./src/${packageConfig.widgetName}.tsx`, /Graph/g, packageConfig.widgetName);
+replreplaceFile(`./src/${packageConfig.widgetName}.editorConfig.ts`, /Graph/g, packageConfig.widgetName);
+replaceFile(`./src/${packageConfig.widgetName}.editorPreview.tsx`, /Graph/g, packageConfig.widgetName);aceFile(`./src/${packageConfig.widgetName}.tsx`, /Graph/g, packageConfig.widgetName);
 replaceFile(`./src/ui/Styles.ts`, /Graph/g, packageConfig.widgetName);
