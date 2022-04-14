@@ -28,3 +28,15 @@ git config --global core.longpaths true
 ```cmd
 "C:\Program Files\Mendix\9.6.0.27784\modeler\mxbuild.exe" --java-home="%JAVA_HOME%" --java-exe-path="%JAVA_HOME%/bin/java.exe" --target=deploy --native-packager --loose-version-check tests\testProject\testProject.mpr
 ```
+
+
+# local development
+```
+set JAVA_HOME=C:\Program Files\AdoptOpenJDK\jdk-8.0.292.10-hotspot
+"C:\Android\android-sdk\tools\bin\sdkmanager.bat" --licenses
+%LocalAppData%/Android/Sdk/platform-tools/adb devices
+cd tests\native-template
+npm i react-native-amap3d@^3.0.7
+npx react-native link react-native-amap3d
+npx react-native run-android --variant=DevDebug
+```
