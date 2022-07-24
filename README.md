@@ -43,3 +43,13 @@ npm i react-native-amap3d@^3.0.7
 npx react-native link react-native-amap3d
 npx react-native run-android --variant=DevDebug
 ```
+
+# 虚拟机
+- android热启动
+```cmd
+start %LocalAppData%/Android/Sdk/emulator/emulator.exe -netdelay none -netspeed full -studio-params tests/emu.tmp -avd Pixel_2_API_30
+```
+- android冷启动
+```cmd
+start %LocalAppData%/Android/Sdk/emulator/emulator.exe -netdelay none -netspeed full -no-snapshot-load -studio-params tests/emu.tmp -avd Pixel_2_API_30
+```
