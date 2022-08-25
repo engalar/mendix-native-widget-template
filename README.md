@@ -44,6 +44,11 @@ npx react-native link react-native-amap3d
 npx react-native run-android --variant=DevDebug
 ```
 
+# 编译mendix app
+```cmd
+ C://\"Program Files\"/Mendix/9.6.12.46216/modeler/mxbuild.exe --java-home="%JAVA_HOME%"" --java-exe-path="%JAVA_HOME%/bin/java.exe" --target=deploy --native-packager --loose-version-check ./ReactNativeClassDemo.mpr
+```
+
 # 虚拟机
 - android热启动
 ```cmd
