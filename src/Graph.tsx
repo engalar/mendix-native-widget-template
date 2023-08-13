@@ -2,8 +2,8 @@ import { createElement, ReactElement, useCallback } from "react";
 import { GraphProps } from "../typings/GraphProps";
 import { Pressable, Text, View } from "react-native";
 import { defaultGraphStyle, GraphStyle } from "./ui/Styles";
-import { flattenStyles } from "./piw-native-utils-internal";
-import { executeAction } from "./piw-utils-internal";
+import { flattenStyles } from "./tools/piw-native-utils-internal";
+import { executeAction } from "./tools/piw-utils-internal";
 
 export function Graph(props: GraphProps<GraphStyle>): ReactElement {
     const styles = flattenStyles(defaultGraphStyle, props.style);

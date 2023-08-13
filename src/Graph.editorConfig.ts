@@ -1,18 +1,16 @@
-import { Properties, StructurePreviewProps, transformGroupsIntoTabs } from "./piw-utils-internal";
 import { GraphPreviewProps } from "../typings/GraphProps";
+import { StructurePreviewProps, topBar } from "./tools/piw-utils-internal";
+import { Properties } from "@mendix/pluggable-widgets-tools";
 
-export function getProperties(
-    values: GraphPreviewProps,
-    defaultProperties: Properties,
-    platform: "web" | "desktop"
-): Properties {
-    console.log(values);
-    if (platform === "web") {
-        transformGroupsIntoTabs(defaultProperties);
-    }
+export function getProperties(_values: any, defaultProperties: Properties): Properties {
     return defaultProperties;
 }
-export function getPreview(values: GraphPreviewProps): StructurePreviewProps | null {
-    console.log(values);
-    return null;
+export function getPreview(values: GraphPreviewProps, isDarkMode: boolean): StructurePreviewProps | null {
+    const content = [
+        {
+            type: "Text",
+            content: values.class
+        }
+    ] as StructurePreviewProps[];
+    return topBar("Bottom sheet", content, isDarkMode);
 }

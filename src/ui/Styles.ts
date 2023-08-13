@@ -1,5 +1,5 @@
 import { TextStyle, ViewStyle } from "react-native";
-import { Style } from "../piw-native-utils-internal";
+import { Style } from "../tools/piw-native-utils-internal";
 
 export interface GraphStyle extends Style {
     container: ViewStyle & { rippleColor?: string };
